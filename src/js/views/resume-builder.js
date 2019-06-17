@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 
 export class Builder extends React.Component {

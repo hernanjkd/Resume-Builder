@@ -113,7 +113,9 @@ const getState = ({ getStore, setStore }) => {
 				let store = getStore();
 				store.experiences[index][item] = value;
 				setStore({ store });
-			}
+			},
+
+			addExperience: []
 		}
 	};
 };
