@@ -1,5 +1,9 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ScrollToTop from "../component/scrollToTop";
+
 import { Context } from "../store/appContext";
+import { Experiences } from "./experiences";
 
 export class Builder extends React.Component {
 	render() {
@@ -13,36 +17,14 @@ export class Builder extends React.Component {
 							</div>
 							<div className="body row">
 								<div className="left-panel col-5 border-right text-center">
-									{store.experiences.map((item, index) => {
-										return (
-											<div key={index} className="card mt-2">
-												<div className="card-body">
-													<h5 className="card-title text-left">{item.title}</h5>
-													<h6 className="card-title text-right">{item.company}</h6>
-													<p className="card-text text-left">{item.description}</p>
-												</div>
-												<div className="card-footer text-muted">
-													<input
-														type="checkbox"
-														onClick={e =>
-															actions.selectExperience("resume", index, e.target.checked)
-														}
-														checked={item.resume ? "checked" : ""}
-													/>
-													Resume
-													<input
-														className="ml-4"
-														type="checkbox"
-														onClick={e =>
-															actions.selectExperience("page", index, e.target.checked)
-														}
-														checked={item.page ? "checked" : ""}
-													/>
-													Page
-												</div>
-											</div>
-										);
-									})}
+									<BrowserRouter basename="/builder">
+										<ScrollToTop>
+											<Switch>
+												<Route exact path="/experiences" component={Experiences} />
+												<Route render={() => <h1>Not found!</h1>} />
+											</Switch>
+										</ScrollToTop>
+									</BrowserRouter>
 								</div>
 								<div className="right-panel col-7 text-center">right panel</div>
 							</div>

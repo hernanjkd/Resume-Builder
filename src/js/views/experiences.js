@@ -8,7 +8,7 @@ export class Experiences extends React.Component {
 			<Context.Consumer>
 				{({ store, actions }) => {
 					return (
-						<div className="container">
+						<div className="container bg-dark">
 							<div className="row">
 								<div className="col-3" />
 								<div className="col-5 text-center">
@@ -76,7 +76,12 @@ export class Experiences extends React.Component {
 														className="display-inline-block"
 														type="checkbox"
 														onClick={e =>
-															actions.selectExperience("resume", index, e.target.checked)
+															actions.selectResumePage(
+																"experiences",
+																"resume",
+																index,
+																e.target.checked
+															)
 														}
 														checked={item.resume ? "checked" : ""}
 													/>
@@ -85,12 +90,18 @@ export class Experiences extends React.Component {
 														className="ml-4 display-inline-block"
 														type="checkbox"
 														onClick={e =>
-															actions.selectExperience("page", index, e.target.checked)
+															actions.selectResumePage(
+																"experiences",
+																"page",
+																index,
+																e.target.checked
+															)
 														}
 														checked={item.page ? "checked" : ""}
 													/>
 													Page
 												</div>
+												{store.experiences.resume ? "TRUE" : "FALSE"}
 											</div>
 										);
 									})}

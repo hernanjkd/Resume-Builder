@@ -109,9 +109,9 @@ const getState = ({ getStore, setStore }) => {
 			certificates: []
 		},
 		actions: {
-			selectExperience: (item, index, value) => {
+			selectResumePage: (obj, item, index, value) => {
 				let store = getStore();
-				store.experiences[index][item] = value;
+				store[obj][index][item] = value;
 				setStore({ store });
 			},
 
