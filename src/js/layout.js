@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 import { Builder } from "./views/resume-builder";
 import { Experiences } from "./views/experiences";
+import { Skills } from "./views/skills";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -24,6 +25,7 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Builder} />
 							<Route exact path="/experiences" component={Experiences} />
+							<Route exact path="/skills" component={Skills} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						{/* <Footer /> */}

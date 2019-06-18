@@ -19,7 +19,7 @@ const getState = ({ getStore, setStore }) => {
 					description: "Worked as a programmer using React and Flask.",
 					from_date: "2019-05-01",
 					to_date: "2019-09-01",
-					resume: true,
+					resume: false,
 					page: false
 				},
 				{
@@ -109,9 +109,9 @@ const getState = ({ getStore, setStore }) => {
 			certificates: []
 		},
 		actions: {
-			selectResumePage: (obj, item, index, value) => {
+			selectResumePage: (obj, resumeORpage, index, value) => {
 				let store = getStore();
-				store[obj][index][item] = value;
+				store[obj][index][resumeORpage] = value;
 				setStore({ store });
 			},
 

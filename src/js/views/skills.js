@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
 
-export class Experiences extends React.Component {
+export class Skills extends React.Component {
 	editExperience = index => {
 		let temp;
 
@@ -76,7 +76,7 @@ export class Experiences extends React.Component {
 											<button className="btn btn-primary float-right">Save</button>
 										</div>
 									</div>
-									{store.experiences.map((item, index) => {
+									{store.skills.map((item, index) => {
 										return (
 											<div key={index} className="card mt-2">
 												<div className="card-body text-left">
