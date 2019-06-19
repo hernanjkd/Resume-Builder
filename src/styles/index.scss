@@ -2,6 +2,11 @@
     font-size: 12px;
 }
 
-.fa-pencil-alt, .fa-trash-alt {
+.fa-pencil-alt, .fa-trash-alt, .fa-times {
     cursor: pointer;
+}
+
+.left-panel {
+    height: 630px;
+    overflow: scroll;
 }

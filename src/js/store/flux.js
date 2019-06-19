@@ -2,8 +2,8 @@ const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			user: {
-				first_name: "Hernan",
-				last_name: "Garcia",
+				firstName: "Hernan",
+				lastName: "Garcia",
 				email: "sdlfkj@gmail.com",
 				dob: "1980-10-30",
 				image_url: "http://lorempixel.com/300/400/nature/2",
@@ -17,8 +17,8 @@ const getState = ({ getStore, setStore }) => {
 					title: "Programmer",
 					company: "4 Geeks Academy",
 					description: "Worked as a programmer using React and Flask.",
-					from_date: "2019-05-01",
-					to_date: "2019-09-01",
+					fromDate: "2019-05-01",
+					toDate: "2019-09-01",
 					resume: false,
 					page: false
 				},
@@ -26,8 +26,8 @@ const getState = ({ getStore, setStore }) => {
 					title: "Warehouse Manager",
 					company: "Bill Hansen's Catering",
 					description: "Organized events and employees.",
-					from_date: "2014-11-22",
-					to_date: "2018-07-04",
+					fromDate: "2014-11-22",
+					toDate: "2018-07-04",
 					resume: true,
 					page: true
 				}
@@ -42,14 +42,14 @@ const getState = ({ getStore, setStore }) => {
 				{
 					skill: "React",
 					level: 5,
-					resume: true,
+					resume: false,
 					page: true
 				},
 				{
 					skill: "Python",
 					level: 3,
 					resume: true,
-					page: true
+					page: false
 				}
 			],
 			education: [
@@ -57,16 +57,16 @@ const getState = ({ getStore, setStore }) => {
 					school: "FIU",
 					degree: null,
 					courses: "JavaScript Programming",
-					from_date: "2010-03-12",
-					to_date: "2014-01-17",
+					fromDate: "2010-03-12",
+					toDate: "2014-01-17",
 					resume: true
 				},
 				{
 					school: "4 Geeks Academy",
 					degree: "Full Stack Developer",
 					courses: null,
-					from_date: "2019-04-29",
-					to_date: "2019-06-28",
+					fromDate: "2019-04-29",
+					toDate: "2019-06-28",
 					resume: true
 				}
 			],

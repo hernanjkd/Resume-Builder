@@ -3,32 +3,34 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import injectContext from "./store/appContext";
-import { Builder } from "./views/resume-builder";
 import { Experiences } from "./views/experiences";
 import { Skills } from "./views/skills";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-//create your first component
 export class Layout extends React.Component {
 	render() {
-		//the basename is used when your project is published in a subdirectory and not in the root of the domain
-		// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-		const basename = process.env.BASENAME || "";
-
 		return (
 			<div className="d-flex flex-column h-100">
-				<BrowserRouter basename={basename}>
+				<BrowserRouter>
 					<ScrollToTop>
-						{/* <Navbar /> */}
-						<Switch>
-							<Route exact path="/" component={Builder} />
-							<Route exact path="/experiences" component={Experiences} />
-							<Route exact path="/skills" component={Skills} />
-							<Route render={() => <h1>Not found!</h1>} />
-						</Switch>
-						{/* <Footer /> */}
+						<div className="container">
+							<div className="top-panel row">
+								<div className="top-panel col-12 border-bottom text-center">top panel</div>
+							</div>
+							<div className="body row">
+								<div className="left-panel col-5 border-right text-center">
+									<Switch>
+										<Route exact path="/" component={Experiences} />
+										<Route exact path="/experiences" component={Experiences} />
+										<Route exact path="/skills" component={Skills} />
+										<Route render={() => <h1>Not found!</h1>} />
+									</Switch>
+								</div>
+								<div className="right-panel col-7 text-center">right panel</div>
+							</div>
+						</div>
 					</ScrollToTop>
 				</BrowserRouter>
 			</div>
