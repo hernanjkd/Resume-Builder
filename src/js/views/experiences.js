@@ -9,6 +9,8 @@ export const Experiences = () => {
 	const [description, setDescription] = useState("");
 	const [fromDate, setFromDate] = useState("");
 	const [toDate, setToDate] = useState("");
+	const [resume, setResume] = useState(false);
+	const [page, setPage] = useState(false);
 
 	return (
 		<div className="container bg-dark">
@@ -40,7 +42,7 @@ export const Experiences = () => {
 						type="text"
 						placeholder="Title"
 						value={title}
-						onChange={e => setTitle(e.target.value)}
+						onChange={({ target: { value: v } }) => setTitle(v)}
 					/>
 					<input
 						className="m-1"
@@ -48,7 +50,7 @@ export const Experiences = () => {
 						type="text"
 						placeholder="Company"
 						value={company}
-						onChange={e => setCompany(e.target.value)}
+						onChange={({ target: { value } }) => setCompany(value)}
 					/>
 					<textarea
 						rows="3"
@@ -60,13 +62,27 @@ export const Experiences = () => {
 					</textarea>
 				</div>
 				<div className="card-footer text-muted">
-					<input className="display-inline-block" type="checkbox" />
+					<input
+						className="display-inline-block"
+						type="checkbox"
+						checked={resume ? "checked" : ""}
+						onClick={() => setResume(!resume)}
+					/>
 					Resume
-					<input className="ml-4 display-inline-block" type="checkbox" />
+					<input
+						className="ml-4 display-inline-block"
+						type="checkbox"
+						checked={page ? "checked" : ""}
+						onClick={() => setPage(!page)}
+					/>
 					Page
 					<button
 						className="btn btn-primary float-right"
-						onClick={() => alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}`)}>
+						onClick={() =>
+							alert(
+								`Title: ${title}\nCompany: ${company}\nDescription: ${description}\nResume: ${resume}`
+							)
+						}>
 						Save
 					</button>
 				</div>
@@ -83,6 +99,8 @@ export const Experiences = () => {
 								description={item.description}
 								fromDate={item.fromDate}
 								toDate={item.toDate}
+								resume={item.resume}
+								page={item.page}
 							/>
 						);
 					});

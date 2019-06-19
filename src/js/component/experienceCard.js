@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/index.scss";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export const ExperienceCard = props => {
 	const [editMode, setEditMode] = useState(false);
@@ -27,7 +28,7 @@ export const ExperienceCard = props => {
 						size="10"
 						type="text"
 						value={fromDate}
-						onChange={e => setFromDate(e.target.value)}
+						onChange={({ target }) => setFromDate(target.value)}
 					/>
 				) : (
 					<i className="dates">{fromDate}</i>
@@ -39,7 +40,7 @@ export const ExperienceCard = props => {
 						size="10"
 						type="text"
 						value={toDate}
-						onChange={e => setToDate(e.target.value)}
+						onChange={({ target: { value } }) => setToDate(value)}
 					/>
 				) : (
 					<i className="dates">{toDate}</i>
@@ -50,7 +51,7 @@ export const ExperienceCard = props => {
 						size="37"
 						type="text"
 						value={title}
-						onChange={e => setTitle(e.target.value)}
+						onChange={({ target: { value: v } }) => setTitle(v)}
 					/>
 				) : (
 					<h5 className="card-title text-center">{title}</h5>
@@ -74,31 +75,43 @@ export const ExperienceCard = props => {
 					<p className="card-text text-left">{description}</p>
 				)}
 			</div>
-			<div className="p-3 border-top">
-				<input
-					className="display-inline-block"
-					type="checkbox"
-					onClick={e => actions.selectResumePage("experiences", "resume", index, e.target.checked)}
-					checked={props.resume ? "checked" : ""}
-				/>
-				Resume
-				<input
-					className="ml-4 display-inline-block"
-					type="checkbox"
-					onClick={e => actions.selectResumePage("experiences", "page", index, e.target.checked)}
-					checked={props.page ? "checked" : ""}
-				/>
-				Page
-				{editMode ? (
-					<button
-						className="btn btn-primary float-right"
-						onClick={() => alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}`)}>
-						Save
-					</button>
-				) : (
-					""
-				)}
-			</div>
+			<Context.Consumer>
+				{({ actions }) => {
+					return (
+						<div className="p-3 border-top">
+							<input
+								className="display-inline-block"
+								type="checkbox"
+								onClick={e =>
+									actions.selectResumePage("experiences", "resume", props.index, e.target.checked)
+								}
+								checked={props.resume ? "checked" : ""}
+							/>
+							Resume
+							<input
+								className="ml-4 display-inline-block"
+								type="checkbox"
+								onClick={({ target: { checked } }) =>
+									actions.selectResumePage("experiences", "page", props.index, checked)
+								}
+								checked={props.page ? "checked" : ""}
+							/>
+							Page
+							{editMode ? (
+								<button
+									className="btn btn-primary float-right"
+									onClick={() =>
+										alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}`)
+									}>
+									Save
+								</button>
+							) : (
+								""
+							)}
+						</div>
+					);
+				}}
+			</Context.Consumer>
 		</div>
 	);
 };
