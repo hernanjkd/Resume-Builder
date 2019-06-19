@@ -21,14 +21,11 @@ export class Layout extends React.Component {
 							</div>
 							<div className="body row">
 								<div className="left-panel col-5 border-right text-center">
-									<Switch>
-										<Route exact path="/" component={Experiences} />
-										<Route exact path="/experiences" component={Experiences} />
-										<Route exact path="/skills" component={Skills} />
-										<Route render={() => <h1>Not found!</h1>} />
-									</Switch>
+									<Experiences />
 								</div>
-								<div className="right-panel col-7 text-center">right panel</div>
+								<div className="right-panel col-7 text-center">
+									<Skills />
+								</div>
 							</div>
 						</div>
 					</ScrollToTop>

@@ -23,6 +23,25 @@ const getState = ({ getStore, setStore }) => {
 					page: false
 				},
 				{
+					title: "Restaurant Manager",
+					company: "Centerplate",
+					description:
+						"Managed people and distributed the workload among all the employees. Set tables and silverware.",
+					fromDate: "2019-05-01",
+					toDate: "2019-09-01",
+					resume: true,
+					page: false
+				},
+				{
+					title: "Car Washer",
+					company: "Clean Clean Cars",
+					description: "Cleaned cars the best way that anyone can.",
+					fromDate: "2019-05-01",
+					toDate: "2019-09-01",
+					resume: false,
+					page: true
+				},
+				{
 					title: "Warehouse Manager",
 					company: "Bill Hansen's Catering",
 					description: "Organized events and employees.",
@@ -40,9 +59,27 @@ const getState = ({ getStore, setStore }) => {
 					page: true
 				},
 				{
-					skill: "React",
+					skill: "PHP",
 					level: 5,
 					resume: false,
+					page: true
+				},
+				{
+					skill: "Java",
+					level: 5,
+					resume: false,
+					page: true
+				},
+				{
+					skill: "Scheme",
+					level: 5,
+					resume: false,
+					page: false
+				},
+				{
+					skill: "React",
+					level: 5,
+					resume: true,
 					page: true
 				},
 				{
