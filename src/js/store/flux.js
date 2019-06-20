@@ -5,7 +5,7 @@ const getState = ({ getStore, setStore }) => {
 				firstName: "Hernan",
 				lastName: "Garcia",
 				email: "hernan.garcia@gmail.com",
-				dob: "1980-10-30",
+				dob: "5/30/80",
 				phone: "(305)878-3294",
 				image_url: "http://lorempixel.com/300/400/nature/2",
 				resume_style: null,
@@ -18,8 +18,8 @@ const getState = ({ getStore, setStore }) => {
 					title: "Programmer",
 					company: "4 Geeks Academy",
 					description: "Worked as a programmer using React and Flask.",
-					fromDate: "2019-05-01",
-					toDate: "2019-09-01",
+					fromDate: "05/01/2019",
+					toDate: "09/01/2019",
 					resume: false,
 					page: false
 				},
@@ -28,8 +28,8 @@ const getState = ({ getStore, setStore }) => {
 					company: "Centerplate",
 					description:
 						"Managed people and distributed the workload among all the employees. Set tables and silverware.",
-					fromDate: "2019-05-01",
-					toDate: "2019-09-01",
+					fromDate: "05/01/2019",
+					toDate: "09/01/2019",
 					resume: true,
 					page: false
 				},
@@ -37,8 +37,8 @@ const getState = ({ getStore, setStore }) => {
 					title: "Car Washer",
 					company: "Clean Clean Cars",
 					description: "Cleaned cars the best way that anyone can.",
-					fromDate: "2019-05-01",
-					toDate: "2019-09-01",
+					fromDate: "05/01/2019",
+					toDate: "09/01/2019",
 					resume: false,
 					page: true
 				},
@@ -46,8 +46,8 @@ const getState = ({ getStore, setStore }) => {
 					title: "Warehouse Manager",
 					company: "Bill Hansen's Catering",
 					description: "Organized events and employees.",
-					fromDate: "2014-11-22",
-					toDate: "2018-07-04",
+					fromDate: "05/01/2019",
+					toDate: "09/01/2019",
 					resume: true,
 					page: true
 				}
@@ -95,16 +95,16 @@ const getState = ({ getStore, setStore }) => {
 					school: "FIU",
 					degree: null,
 					courses: "JavaScript Programming",
-					fromDate: "2010-03-12",
-					toDate: "2014-01-17",
+					fromDate: "05/01/2019",
+					toDate: "09/01/2019",
 					resume: true
 				},
 				{
 					school: "4 Geeks Academy",
 					degree: "Full Stack Developer",
 					courses: null,
-					fromDate: "2019-04-29",
-					toDate: "2019-06-28",
+					fromDate: "05/01/2019",
+					toDate: "09/01/2019",
 					resume: true
 				}
 			],

@@ -5,6 +5,13 @@ body {
 .dates {
     font-size: 12px;
 }
+.react-datepicker-wrapper {
+    width: 150px;
+}
+// .react-datepicker__input-container {
+//     position: absolute;
+//     width: 200px;
+// }
 
 .fa-pencil-alt, .fa-trash-alt, .fa-times, .route {
     cursor: pointer;
@@ -12,12 +19,13 @@ body {
 
 .route {
     background: #292929;
+    border-color: white;
 }
 
 .left-panel, .right-panel {
     overflow: scroll;
 }
 
-.card, .resume {
-    box-shadow: 10px 10px 10px;
+.card {
+    box-shadow: 10px 10px 10px 5px;
 }

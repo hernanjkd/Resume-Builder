@@ -3,7 +3,13 @@ import "../../styles/resume.scss";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
 
-export const Resume = props => {
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+export const Resume = () => {
+	const formatDate = date => {
+		return months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+	};
+
 	return (
 		<Context.Consumer>
 			{({ store }) => {
@@ -30,7 +36,8 @@ export const Resume = props => {
 									return (
 										<div key={index}>
 											<i className="dates float-right">
-												{item.fromDate} - {item.toDate}
+												{formatDate(new Date(item.fromDate))} -{" "}
+												{formatDate(new Date(item.toDate))}
 											</i>
 											<h5>{item.company}</h5>
 											<h6>{item.title}</h6>

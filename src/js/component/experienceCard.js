@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../../styles/index.scss";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const ExperienceCard = props => {
 	const [editMode, setEditMode] = useState(false);
@@ -14,37 +16,46 @@ export const ExperienceCard = props => {
 	return (
 		<div className="card mt-2 bg-light">
 			<div className={editMode ? "card-body text-center" : "card-body text-left"}>
-				<div className="float-right">
+				<div className="float-left">
+					<i className="fas fa-trash-alt mr-3" />
 					{editMode ? (
-						<i className="fas fa-times fa-lg mr-3" onClick={() => setEditMode(!editMode)} />
+						<i className="fas fa-times fa-lg" onClick={() => setEditMode(!editMode)} />
 					) : (
-						<i className="fas fa-pencil-alt mr-3" onClick={() => setEditMode(!editMode)} />
+						<i className="fas fa-pencil-alt" onClick={() => setEditMode(!editMode)} />
 					)}
-					<i className="fas fa-trash-alt" />
 				</div>
-				{editMode ? (
-					<input
-						className="m-1 display-inline-block"
-						size="10"
-						type="text"
-						value={fromDate}
-						onChange={({ target }) => setFromDate(target.value)}
-					/>
-				) : (
-					<i className="dates">{fromDate}</i>
-				)}{" "}
-				-{" "}
-				{editMode ? (
-					<input
-						className="m-1 display-inline-block"
-						size="10"
-						type="text"
-						value={toDate}
-						onChange={({ target: { value } }) => setToDate(value)}
-					/>
-				) : (
-					<i className="dates">{toDate}</i>
-				)}
+				<div className="text-right">
+					{editMode ? (
+						<DatePicker
+							className="m-1 w-50"
+							selected={new Date(fromDate)}
+							dateFormat="MM/dd/yyyy"
+							fixedHeight
+							showMonthDropdown
+							showYearDropdown
+							onChange={date => {
+								setFromDate(date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear());
+							}}
+						/>
+					) : (
+						<i className="dates">{fromDate} - </i>
+					)}
+					{editMode ? (
+						<DatePicker
+							className="m-1 w-50"
+							selected={new Date(toDate)}
+							dateFormat="MM/dd/yyyy"
+							fixedHeight
+							showMonthDropdown
+							showYearDropdown
+							onChange={date => {
+								setToDate(date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear());
+							}}
+						/>
+					) : (
+						<i className="dates">{toDate}</i>
+					)}
+				</div>
 				{editMode ? (
 					<input
 						className="m-1"
@@ -105,7 +116,8 @@ export const ExperienceCard = props => {
 								<button
 									className="btn btn-info float-right"
 									onClick={() =>
-										alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}`)
+										alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}
+												\nFrom Date: ${fromDate}`)
 									}>
 									Save
 								</button>

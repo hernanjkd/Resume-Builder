@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
 import { ExperienceCard } from "../component/experienceCard";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const Experiences = () => {
 	const [title, setTitle] = useState("");
 	const [company, setCompany] = useState("");
 	const [description, setDescription] = useState("");
-	const [fromDate, setFromDate] = useState("");
-	const [toDate, setToDate] = useState("");
+	const [fromDate, setFromDate] = useState(null);
+	const [toDate, setToDate] = useState(null);
 	const [resume, setResume] = useState(false);
 	const [page, setPage] = useState(false);
 
@@ -16,24 +18,31 @@ export const Experiences = () => {
 		<div className="container">
 			<div className="card mt-2 bg-light">
 				<div className="card-body">
-					<div className="text-right">
-						Dates
-						<input
-							className="m-1 display-inline-block"
-							size="10"
-							type="text"
-							placeholder="From"
-							value={fromDate}
-							onChange={e => setFromDate(e.target.value)}
+					<div className="text-left">
+						<DatePicker
+							className="m-1"
+							selected={fromDate ? new Date(fromDate) : null}
+							dateFormat="MM/dd/yyyy"
+							fixedHeight
+							showMonthDropdown
+							showYearDropdown
+							placeholderText="From Date"
+							onChange={date => {
+								setFromDate(date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear());
+							}}
 						/>
-						-
-						<input
-							className="m-1 display-inline-block"
-							size="10"
-							type="text"
-							placeholder="To"
-							value={toDate}
-							onChange={e => setToDate(e.target.value)}
+
+						<DatePicker
+							className="m-1"
+							selected={toDate ? new Date(toDate) : null}
+							dateFormat="MM/dd/yyyy"
+							fixedHeight
+							showMonthDropdown
+							showYearDropdown
+							placeholderText="To Date"
+							onChange={date => {
+								setToDate(date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear());
+							}}
 						/>
 					</div>
 					<input
