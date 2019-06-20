@@ -4,8 +4,9 @@ const getState = ({ getStore, setStore }) => {
 			user: {
 				firstName: "Hernan",
 				lastName: "Garcia",
-				email: "sdlfkj@gmail.com",
+				email: "hernan.garcia@gmail.com",
 				dob: "1980-10-30",
+				phone: "(305)878-3294",
 				image_url: "http://lorempixel.com/300/400/nature/2",
 				resume_style: null,
 				theme: null,

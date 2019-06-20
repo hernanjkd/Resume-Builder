@@ -56,7 +56,7 @@ export const SkillCard = props => {
 							Page
 							{editMode ? (
 								<button
-									className="btn btn-primary float-right"
+									className="btn btn-info float-right"
 									onClick={
 										() => alert(`Skill: ${skill}`) //\nResume: ${resume}\nPage: ${page}`)
 									}>

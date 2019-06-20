@@ -1,3 +1,7 @@
+body {
+    background: #494949;//#3b4142 bg-dark//#064c51 dark teal
+}
+
 .dates {
     font-size: 12px;
 }
@@ -6,6 +10,14 @@
     cursor: pointer;
 }
 
+.route {
+    background: #292929;
+}
+
 .left-panel, .right-panel {
     overflow: scroll;
+}
+
+.card, .resume {
+    box-shadow: 10px 10px 10px;
 }

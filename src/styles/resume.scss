@@ -1,5 +1,21 @@
 .resume {
+    width: 90%;
     background: white;
     display: inline-block;
     margin: auto;
+}
+.resume div {
+    padding: 0;
+}
+.left-side {
+    font-size: 0.9em;
+}
+.name {
+    font-size: 1.5em;
+}
+.links {
+    font-size: 0.9em;
+    color: blue;
+    text-decoration: underline;
+    word-wrap: break-word;
 }

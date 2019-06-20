@@ -26,12 +26,12 @@ export class Layout extends React.Component {
 		const RightPanel = views[this.state.right];
 		return (
 			<div className="d-flex flex-column h-100">
-				<div className="container">
+				<div className="container-fluid">
 					<div className="top-panel row">
 						<div className="top-panel col-12 border-bottom text-center">top panel</div>
 					</div>
 					<div className="body row">
-						<div className="left-panel col-5 border-right text-center" style={this.rowStyle}>
+						<div className="left-panel col-4 border-right text-center" style={this.rowStyle}>
 							<div className="text-left">
 								<div
 									className="route border-bottom border-left p-1 text-light d-inline-block"
@@ -47,7 +47,7 @@ export class Layout extends React.Component {
 							</div>
 							<LeftPanel />
 						</div>
-						<div className="right-panel col-7 text-center" style={this.rowStyle}>
+						<div className="right-panel col text-center" style={this.rowStyle}>
 							<div className="text-right">
 								<div
 									className="route border-bottom border-left p-1 text-light d-inline-block"

@@ -68,9 +68,13 @@ export const ExperienceCard = props => {
 					<h6 className="card-title text-center">{company}</h6>
 				)}
 				{editMode ? (
-					<textarea rows="3" cols="36" name="description" onChange={e => setDescription(e.target.value)}>
-						{description}
-					</textarea>
+					<textarea
+						rows="3"
+						cols="36"
+						name="description"
+						onChange={e => setDescription(e.target.value)}
+						defaultValue={description}
+					/>
 				) : (
 					<p className="card-text text-left">{description}</p>
 				)}
@@ -99,7 +103,7 @@ export const ExperienceCard = props => {
 							Page
 							{editMode ? (
 								<button
-									className="btn btn-primary float-right"
+									className="btn btn-info float-right"
 									onClick={() =>
 										alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}`)
 									}>
@@ -117,12 +121,12 @@ export const ExperienceCard = props => {
 };
 
 ExperienceCard.propTypes = {
-	index: PropTypes.string,
+	index: PropTypes.number,
 	title: PropTypes.string,
 	company: PropTypes.string,
 	description: PropTypes.string,
 	fromDate: PropTypes.string,
 	toDate: PropTypes.string,
-	resume: PropTypes.string,
-	page: PropTypes.string
+	resume: PropTypes.boolean,
+	page: PropTypes.boolean
 };

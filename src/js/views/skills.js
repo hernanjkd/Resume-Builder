@@ -12,7 +12,7 @@ export const Skills = () => {
 		<Context.Consumer>
 			{({ store, actions }) => {
 				return (
-					<div className="container bg-dark">
+					<div className="container">
 						<div className="card mt-2 bg-light">
 							<div className="card-body">
 								<input
@@ -39,7 +39,7 @@ export const Skills = () => {
 									onClick={() => setPage(!page)}
 								/>
 								Page
-								<button className="btn btn-primary float-right">Save</button>
+								<button className="btn btn-info float-right">Save</button>
 							</div>
 						</div>
 						{store.skills.map((item, index) => {

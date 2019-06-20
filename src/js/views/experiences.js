@@ -13,7 +13,7 @@ export const Experiences = () => {
 	const [page, setPage] = useState(false);
 
 	return (
-		<div className="container bg-dark">
+		<div className="container">
 			<div className="card mt-2 bg-light">
 				<div className="card-body">
 					<div className="text-right">
@@ -57,16 +57,16 @@ export const Experiences = () => {
 						cols="36"
 						name="description"
 						placeholder="Description"
-						onChange={e => setDescription(e.target.value)}>
-						{description}
-					</textarea>
+						defaultValue={description}
+						onChange={e => setDescription(e.target.value)}
+					/>
 				</div>
 				<div className="card-footer text-muted">
 					<input
 						className="display-inline-block"
 						type="checkbox"
 						checked={resume ? "checked" : ""}
-						onClick={() => setResume(!resume)}
+						onChange={() => setResume(!resume)}
 					/>
 					Resume
 					<input
@@ -77,7 +77,7 @@ export const Experiences = () => {
 					/>
 					Page
 					<button
-						className="btn btn-primary float-right"
+						className="btn btn-info float-right"
 						onClick={() =>
 							alert(
 								`Title: ${title}\nCompany: ${company}\nDescription: ${description}\nResume: ${resume}`
