@@ -24,10 +24,10 @@ export const ExperienceCard = props => {
 						<i className="fas fa-pencil-alt" onClick={() => setEditMode(!editMode)} />
 					)}
 				</div>
-				<div className="text-right">
+				<div className={editMode ? "text-center" : "text-right"}>
 					{editMode ? (
 						<DatePicker
-							className="m-1 w-50"
+							className="datepicker"
 							selected={new Date(fromDate)}
 							dateFormat="MM/dd/yyyy"
 							fixedHeight
@@ -42,7 +42,7 @@ export const ExperienceCard = props => {
 					)}
 					{editMode ? (
 						<DatePicker
-							className="m-1 w-50"
+							className="datepicker"
 							selected={new Date(toDate)}
 							dateFormat="MM/dd/yyyy"
 							fixedHeight

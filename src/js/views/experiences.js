@@ -18,9 +18,9 @@ export const Experiences = () => {
 		<div className="container">
 			<div className="card mt-2 bg-light">
 				<div className="card-body">
-					<div className="text-left">
+					<div className="text-center">
 						<DatePicker
-							className="m-1"
+							className="datepicker"
 							selected={fromDate ? new Date(fromDate) : null}
 							dateFormat="MM/dd/yyyy"
 							fixedHeight
@@ -33,7 +33,7 @@ export const Experiences = () => {
 						/>
 
 						<DatePicker
-							className="m-1"
+							className="datepicker"
 							selected={toDate ? new Date(toDate) : null}
 							dateFormat="MM/dd/yyyy"
 							fixedHeight
