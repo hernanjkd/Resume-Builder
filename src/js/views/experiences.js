@@ -14,7 +14,7 @@ export const Experiences = () => {
 
 	return (
 		<div className="container bg-dark">
-			<div className="card mt-2">
+			<div className="card mt-2 bg-light">
 				<div className="card-body">
 					<div className="text-right">
 						Dates

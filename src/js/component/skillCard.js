@@ -9,7 +9,7 @@ export const SkillCard = props => {
 	const [skill, setSkill] = useState(props.skill);
 
 	return (
-		<div className="card mt-2">
+		<div className="card mt-2 bg-light">
 			<div className="card-body text-left">
 				<div className="float-right">
 					{editMode ? (
@@ -35,7 +35,7 @@ export const SkillCard = props => {
 			<Context.Consumer>
 				{({ actions }) => {
 					return (
-						<div className="p-3 border-top">
+						<div className="card-footer text-muted">
 							<input
 								className="display-inline-block"
 								type="checkbox"
