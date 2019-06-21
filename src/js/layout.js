@@ -3,12 +3,13 @@ import injectContext from "./store/appContext";
 import { Experiences } from "./views/experiences";
 import { Skills } from "./views/skills";
 import { Resume } from "./views/resume";
+import { Education } from "./views/education";
 
 const views = {
 	experiences: Experiences,
 	skills: Skills,
-	resume: Resume
-	// page: Page
+	resume: Resume,
+	education: Education
 };
 
 export class Layout extends React.Component {
@@ -43,7 +44,11 @@ export class Layout extends React.Component {
 									onClick={() => this.setState({ left: "skills" })}>
 									Skills
 								</div>
-								<div className="route border border-top-0 p-1 text-light d-inline-block">Education</div>
+								<div
+									className="route border border-top-0 p-1 text-light d-inline-block"
+									onClick={() => this.setState({ left: "education" })}>
+									Education
+								</div>
 							</div>
 							<LeftPanel />
 						</div>

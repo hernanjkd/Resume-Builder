@@ -29,6 +29,10 @@ body {
 .card {
     box-shadow: 10px 10px 10px 5px;
 }
+
+.react-datepicker-popper[data-placement^="bottom-start"]{
+    left:-30px!important;
+}
 //
 //
 //

@@ -26,7 +26,7 @@ export const Resume = () => {
 		<Context.Consumer>
 			{({ store }) => {
 				const name = store.user.firstName + " " + store.user.lastName;
-				const exp = store.experiences.filter(item => item.resume === "true");
+				const exp = store.experience.filter(item => item.resume === "true");
 				const [{ description: purpose }] = store.purpose.filter(item => item.resume === "true");
 				const [{ description: about }] = store.about.filter(item => item.resume === "true");
 				const skills = store.skills.filter(item => item.resume === "true");

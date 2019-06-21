@@ -7,11 +7,17 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export const ExperienceCard = props => {
 	const [editMode, setEditMode] = useState(false);
+
 	const [title, setTitle] = useState(props.title);
+	if (props.title != title) setTitle(props.title);
 	const [company, setCompany] = useState(props.company);
+	if (props.company != company) setCompany(props.company);
 	const [description, setDescription] = useState(props.description);
+	if (props.description != description) setDescription(props.description);
 	const [fromDate, setFromDate] = useState(props.fromDate);
+	if (props.fromDate != fromDate) setFromDate(props.fromDate);
 	const [toDate, setToDate] = useState(props.toDate);
+	if (props.toDate != toDate) setToDate(props.toDate);
 
 	return (
 		<div className="card mt-2 bg-light">
@@ -79,13 +85,7 @@ export const ExperienceCard = props => {
 					<h6 className="card-title text-center">{company}</h6>
 				)}
 				{editMode ? (
-					<textarea
-						rows="3"
-						cols="36"
-						name="description"
-						onChange={e => setDescription(e.target.value)}
-						defaultValue={description}
-					/>
+					<textarea rows="3" cols="36" onChange={e => setDescription(e.target.value)} value={description} />
 				) : (
 					<p className="card-text text-left">{description}</p>
 				)}
@@ -106,7 +106,7 @@ export const ExperienceCard = props => {
 							<input
 								className="ml-4 display-inline-block"
 								type="checkbox"
-								onClick={({ target: { checked } }) =>
+								onChange={({ target: { checked } }) =>
 									actions.selectResumePage("experiences", "page", props.index, checked)
 								}
 								checked={props.page === "true" ? "checked" : ""}
@@ -115,7 +115,7 @@ export const ExperienceCard = props => {
 							{editMode ? (
 								<button
 									className="btn btn-info float-right"
-									onClick={() =>
+									onChange={() =>
 										alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}
 												\nFrom Date: ${fromDate}`)
 									}>
@@ -139,6 +139,6 @@ ExperienceCard.propTypes = {
 	description: PropTypes.string,
 	fromDate: PropTypes.string,
 	toDate: PropTypes.string,
-	resume: PropTypes.boolean,
-	page: PropTypes.boolean
+	resume: PropTypes.string,
+	page: PropTypes.string
 };

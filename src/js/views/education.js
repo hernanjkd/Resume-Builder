@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
-import { ExperienceCard } from "../component/experienceCard";
+import { EducationCard } from "../component/educationCard";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export const Experiences = () => {
-	const [title, setTitle] = useState("");
-	const [company, setCompany] = useState("");
-	const [description, setDescription] = useState("");
-	const [fromDate, setFromDate] = useState(null);
-	const [toDate, setToDate] = useState(null);
+export const Education = () => {
+	const [degree, setDegree] = useState("");
+	const [school, setSchool] = useState("");
+	const [course, setCourse] = useState("");
+	const [fromDate, setFromDate] = useState("");
+	const [toDate, setToDate] = useState("");
 	const [resume, setResume] = useState(false);
-	const [page, setPage] = useState(false);
 
 	return (
 		<div className="container">
@@ -48,77 +47,53 @@ export const Experiences = () => {
 						className="m-1"
 						size="37"
 						type="text"
-						placeholder="Title"
-						value={title}
-						onChange={({ target: { value: v } }) => setTitle(v)}
+						placeholder="Degree"
+						value={degree}
+						onChange={({ target: { value: v } }) => setDegree(v)}
 					/>
 					<input
 						className="m-1"
 						size="37"
 						type="text"
-						placeholder="Company"
-						value={company}
-						onChange={({ target: { value } }) => setCompany(value)}
+						placeholder="School"
+						value={school}
+						onChange={({ target: { value } }) => setSchool(value)}
 					/>
 					<textarea
 						rows="3"
 						cols="36"
-						name="description"
-						placeholder="Description"
-						defaultValue={description}
-						onChange={e => setDescription(e.target.value)}
+						placeholder="Courses"
+						defaultValue={course}
+						onChange={e => setCourse(e.target.value)}
 					/>
 				</div>
 				<div className="card-footer text-muted">
 					<input
 						className="display-inline-block"
 						type="checkbox"
-						checked={resume === "true" ? "checked" : ""}
+						checked={resume ? "checked" : ""}
 						onChange={() => setResume(resume === "true" ? "false" : "true")}
 					/>
 					Resume
-					<input
-						className="ml-4 display-inline-block"
-						type="checkbox"
-						checked={page === "true" ? "checked" : ""}
-						onChange={() => setPage(page === "true" ? "false" : "true")}
-					/>
-					Page
-					<Context.Consumer>
-						{({ store, actions }) => {
-							return (
-								<button
-									className="btn btn-info float-right"
-									onChange={() =>
-										actions.addExperience(
-											title,
-											company,
-											description,
-											fromDate,
-											toDate,
-											resume,
-											page,
-											store.user.id
-										)
-									}>
-									Save
-								</button>
-							);
-						}}
-					</Context.Consumer>
+					<button
+						className="btn btn-info float-right"
+						onClick={() =>
+							alert(`Title: ${title}\nSchool: ${School}\nCourse: ${Course}\nResume: ${resume}`)
+						}>
+						Save
+					</button>
 				</div>
 			</div>
 			<Context.Consumer>
 				{({ store }) => {
-					console.log(store);
-					return store.experience.map((item, index) => {
+					return store.education.map((item, index) => {
 						return (
-							<ExperienceCard
+							<EducationCard
 								key={index}
 								index={index}
-								title={item.title}
-								company={item.company}
-								description={item.description}
+								degree={item.degree}
+								school={item.school}
+								course={item.course}
 								fromDate={item.fromDate}
 								toDate={item.toDate}
 								resume={item.resume}

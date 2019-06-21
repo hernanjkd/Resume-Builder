@@ -1,7 +1,10 @@
-const getState = ({ getStore, setStore }) => {
+import { url } from "./url.js";
+
+const getState = ({ getStore, setStore, getActions }) => {
 	return {
 		store: {
 			user: {
+				id: 17,
 				firstName: "Hernan",
 				lastName: "Garcia",
 				email: "hernan.garcia@gmail.com",
@@ -13,7 +16,7 @@ const getState = ({ getStore, setStore }) => {
 				title: "Software Engineer",
 				display: "objective"
 			},
-			experiences: [
+			experience: [
 				{
 					title: "Programmer",
 					company: "4 Geeks Academy",
@@ -93,8 +96,8 @@ const getState = ({ getStore, setStore }) => {
 			education: [
 				{
 					school: "FIU",
-					degree: null,
-					courses: "JavaScript Programming",
+					degree: "Computer Science",
+					course: "JavaScript Programming",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
 					resume: "true"
@@ -102,13 +105,13 @@ const getState = ({ getStore, setStore }) => {
 				{
 					school: "4 Geeks Academy",
 					degree: "Full Stack Developer",
-					courses: null,
+					course: "React, Flask",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
 					resume: "true"
 				}
 			],
-			products: [
+			product: [
 				{
 					description: null,
 					date: null,
@@ -143,17 +146,44 @@ const getState = ({ getStore, setStore }) => {
 				{
 					url: "https://github.com/hernanjkd"
 				}
-			],
-			certificates: []
+			]
 		},
 		actions: {
+			getTable: tableName => {
+				fetch(url + "/" + tableName)
+					.then(response => response.json())
+					.then(data => {
+						const store = getStore();
+						store[tableName] = data;
+						setStore({ store });
+					});
+			},
+
+			addExperience: (title, company, description, fromDate, toDate, resume, page, user_id) => {
+				fetch(url + "/experience", {
+					method: "post",
+					headers: { "Content-type": "application/json" },
+					body: JSON.stringify({
+						title: title,
+						company: company,
+						description: description,
+						fromDate: fromDate,
+						toDate: toDate,
+						resume: resume,
+						page: page,
+						user_id: user_id
+					})
+				}).then(() => {
+					const actions = getActions();
+					actions.getTable("experience");
+				});
+			},
+
 			selectResumePage: (obj, resumeORpage, index, value) => {
 				let store = getStore();
 				store[obj][index][resumeORpage] = String(value);
 				setStore({ store });
-			},
-
-			addExperience: []
+			}
 		}
 	};
 };
