@@ -2,21 +2,13 @@ body {
     background: #494949;//#3b4142 bg-dark//#064c51 dark teal
 }
 
+.word-wrap {
+    word-wrap: break-word;
+}
+
 .dates {
     font-size: 12px;
 }
-// .react-datepicker-wrapper {
-//     width: 100px;
-//     padding: 0;
-//     margin: 0;
-//     background: green;
-// }
-// .react-datepicker__input-container {
-//     width: 100px;
-//     padding: 0;
-//     margin: 0;
-//     background: red;
-// }
 .datepicker {
     width: 100px;
 }
@@ -37,3 +29,40 @@ body {
 .card {
     box-shadow: 10px 10px 10px 5px;
 }
+//
+//
+//
+//
+//
+// .right-panel {
+//     z-index: -100000000;
+// }
+// .react-datepicker {
+//     top: 0px;
+//     position: absolute;
+//     background: red;
+//     width: 500px;
+//     visibility: visible;
+//     z-index: 100000000;
+// }
+// .react-datepicker__month-container {
+//     background: green;
+//     width: 1000px;
+//     z-index: 9999999999;
+// }
+//
+//
+//
+//
+// .react-datepicker-wrapper {
+//     width: 100px;
+//     padding: 0;
+//     margin: 0;
+//     background: green;
+// }
+// .react-datepicker__input-container {
+//     width: 100px;
+//     padding: 0;
+//     margin: 0;
+//     background: red;
+// }

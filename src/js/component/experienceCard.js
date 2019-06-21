@@ -100,7 +100,7 @@ export const ExperienceCard = props => {
 								onClick={e =>
 									actions.selectResumePage("experiences", "resume", props.index, e.target.checked)
 								}
-								checked={props.resume ? "checked" : ""}
+								checked={props.resume === "true" ? "checked" : ""}
 							/>
 							Resume
 							<input
@@ -109,7 +109,7 @@ export const ExperienceCard = props => {
 								onClick={({ target: { checked } }) =>
 									actions.selectResumePage("experiences", "page", props.index, checked)
 								}
-								checked={props.page ? "checked" : ""}
+								checked={props.page === "true" ? "checked" : ""}
 							/>
 							Page
 							{editMode ? (

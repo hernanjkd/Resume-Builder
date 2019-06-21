@@ -46,10 +46,10 @@ export const Skills = () => {
 							return (
 								<SkillCard
 									key={index}
+									index={index}
 									skill={item.skill}
 									resume={item.resume}
 									page={item.page}
-									//level={item.level}
 								/>
 							);
 						})}

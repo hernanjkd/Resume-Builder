@@ -20,8 +20,8 @@ const getState = ({ getStore, setStore }) => {
 					description: "Worked as a programmer using React and Flask.",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
-					resume: false,
-					page: false
+					resume: "false",
+					page: "false"
 				},
 				{
 					title: "Restaurant Manager",
@@ -30,8 +30,8 @@ const getState = ({ getStore, setStore }) => {
 						"Managed people and distributed the workload among all the employees. Set tables and silverware.",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
-					resume: true,
-					page: false
+					resume: "true",
+					page: "false"
 				},
 				{
 					title: "Car Washer",
@@ -39,8 +39,8 @@ const getState = ({ getStore, setStore }) => {
 					description: "Cleaned cars the best way that anyone can.",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
-					resume: false,
-					page: true
+					resume: "false",
+					page: "true"
 				},
 				{
 					title: "Warehouse Manager",
@@ -48,46 +48,46 @@ const getState = ({ getStore, setStore }) => {
 					description: "Organized events and employees.",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
-					resume: true,
-					page: true
+					resume: "true",
+					page: "true"
 				}
 			],
 			skills: [
 				{
 					skill: "JavaScript",
 					level: 7,
-					resume: true,
-					page: true
+					resume: "true",
+					page: "true"
 				},
 				{
 					skill: "PHP",
 					level: 5,
-					resume: false,
-					page: true
+					resume: "false",
+					page: "true"
 				},
 				{
 					skill: "Java",
 					level: 5,
-					resume: false,
-					page: true
+					resume: "false",
+					page: "true"
 				},
 				{
 					skill: "Scheme",
 					level: 5,
-					resume: false,
-					page: false
+					resume: "false",
+					page: "false"
 				},
 				{
 					skill: "React",
 					level: 5,
-					resume: true,
-					page: true
+					resume: "true",
+					page: "true"
 				},
 				{
 					skill: "Python",
 					level: 3,
-					resume: true,
-					page: false
+					resume: "true",
+					page: "false"
 				}
 			],
 			education: [
@@ -97,7 +97,7 @@ const getState = ({ getStore, setStore }) => {
 					courses: "JavaScript Programming",
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
-					resume: true
+					resume: "true"
 				},
 				{
 					school: "4 Geeks Academy",
@@ -105,7 +105,7 @@ const getState = ({ getStore, setStore }) => {
 					courses: null,
 					fromDate: "05/01/2019",
 					toDate: "09/01/2019",
-					resume: true
+					resume: "true"
 				}
 			],
 			products: [
@@ -119,21 +119,21 @@ const getState = ({ getStore, setStore }) => {
 			about: [
 				{
 					description:
-						"I really enjoy coding and helping out others, my favorite subject to read is about aliens and other civilizations.<br>This is just some writing so we can see how it looks when there is a good amount of context. Maybe I can create some more content to fill up.",
-					resume: true,
-					page: false
+						"I really enjoy coding and helping out others, my favorite subject to read is about aliens and other civilizations.\nThis is just some writing so we can see how it looks when there is a good amount of context. Maybe I can create some more content to fill up.",
+					resume: "true",
+					page: "false"
 				},
 				{
 					description: "Another about me section in case I want a different one in the resume from the page.",
-					resume: false,
-					page: true
+					resume: "false",
+					page: "true"
 				}
 			],
 			purpose: [
 				{
 					description: "Helping companies reach their goals by serving them great mate.",
-					resume: true,
-					page: true
+					resume: "true",
+					page: "true"
 				}
 			],
 			links: [
@@ -149,7 +149,7 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			selectResumePage: (obj, resumeORpage, index, value) => {
 				let store = getStore();
-				store[obj][index][resumeORpage] = value;
+				store[obj][index][resumeORpage] = String(value);
 				setStore({ store });
 			},
 

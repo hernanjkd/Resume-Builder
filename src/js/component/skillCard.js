@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 export const SkillCard = props => {
-	// const [level, setLevel] = useState(props.level);
 	const [editMode, setEditMode] = useState(false);
 	const [skill, setSkill] = useState(props.skill);
 
@@ -40,18 +39,18 @@ export const SkillCard = props => {
 								className="display-inline-block"
 								type="checkbox"
 								onClick={e =>
-									actions.selectResumePage("experiences", "resume", props.index, e.target.checked)
+									actions.selectResumePage("skills", "resume", props.index, e.target.checked)
 								}
-								checked={props.resume ? "checked" : ""}
+								checked={props.resume === "true" ? "checked" : ""}
 							/>
 							Resume
 							<input
 								className="ml-4 display-inline-block"
 								type="checkbox"
 								onClick={({ target: { checked } }) =>
-									actions.selectResumePage("experiences", "page", props.index, checked)
+									actions.selectResumePage("skills", "page", props.index, checked)
 								}
-								checked={props.page ? "checked" : ""}
+								checked={props.page === "true" ? "checked" : ""}
 							/>
 							Page
 							{editMode ? (
@@ -78,5 +77,4 @@ SkillCard.propTypes = {
 	skill: PropTypes.string,
 	resume: PropTypes.string,
 	page: PropTypes.string
-	// level: PropTypes.number
 };

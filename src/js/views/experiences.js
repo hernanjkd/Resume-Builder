@@ -31,7 +31,6 @@ export const Experiences = () => {
 								setFromDate(date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear());
 							}}
 						/>
-
 						<DatePicker
 							className="datepicker"
 							selected={toDate ? new Date(toDate) : null}
