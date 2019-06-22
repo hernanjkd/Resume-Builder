@@ -97,7 +97,7 @@ export const EducationCard = props => {
 							<input
 								className="display-inline-block"
 								type="checkbox"
-								onClick={e =>
+								onChange={e =>
 									actions.selectResumePage("education", "resume", props.index, e.target.checked)
 								}
 								checked={props.resume === "true" ? "checked" : ""}

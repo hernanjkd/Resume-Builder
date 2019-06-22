@@ -38,7 +38,7 @@ export const SkillCard = props => {
 							<input
 								className="display-inline-block"
 								type="checkbox"
-								onClick={e =>
+								onChange={e =>
 									actions.selectResumePage("skills", "resume", props.index, e.target.checked)
 								}
 								checked={props.resume === "true" ? "checked" : ""}
@@ -47,7 +47,7 @@ export const SkillCard = props => {
 							<input
 								className="ml-4 display-inline-block"
 								type="checkbox"
-								onClick={({ target: { checked } }) =>
+								onChange={({ target: { checked } }) =>
 									actions.selectResumePage("skills", "page", props.index, checked)
 								}
 								checked={props.page === "true" ? "checked" : ""}

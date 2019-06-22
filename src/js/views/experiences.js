@@ -89,7 +89,7 @@ export const Experiences = () => {
 							return (
 								<button
 									className="btn btn-info float-right"
-									onChange={() =>
+									onClick={() =>
 										actions.addExperience(
 											title,
 											company,

@@ -97,7 +97,7 @@ export const ExperienceCard = props => {
 							<input
 								className="display-inline-block"
 								type="checkbox"
-								onClick={e =>
+								onChange={e =>
 									actions.selectResumePage("experiences", "resume", props.index, e.target.checked)
 								}
 								checked={props.resume === "true" ? "checked" : ""}
@@ -115,7 +115,7 @@ export const ExperienceCard = props => {
 							{editMode ? (
 								<button
 									className="btn btn-info float-right"
-									onChange={() =>
+									onClick={() =>
 										alert(`Title: ${title}\nCompany: ${company}\nDescription: ${description}
 												\nFrom Date: ${fromDate}`)
 									}>
