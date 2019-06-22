@@ -6,6 +6,7 @@ import { Context } from "../store/appContext";
 export const SkillCard = props => {
 	const [editMode, setEditMode] = useState(false);
 	const [skill, setSkill] = useState(props.skill);
+	if (props.skill != skill) setSkill(props.skill);
 
 	return (
 		<div className="card mt-2 bg-light">

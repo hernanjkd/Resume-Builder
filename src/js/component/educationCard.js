@@ -8,10 +8,15 @@ import "react-datepicker/dist/react-datepicker.css";
 export const EducationCard = props => {
 	const [editMode, setEditMode] = useState(false);
 	const [degree, setDegree] = useState(props.degree);
+	if (props.degree != degree) setDegree(props.degree);
 	const [school, setSchool] = useState(props.school);
+	if (props.school != school) setSchool(props.school);
 	const [course, setCourse] = useState(props.course);
+	if (props.course != course) setCourse(props.course);
 	const [fromDate, setFromDate] = useState(props.fromDate);
+	if (props.fromDate != fromDate) setFromDate(props.fromDate);
 	const [toDate, setToDate] = useState(props.toDate);
+	if (props.toDate != toDate) setToDate(props.toDate);
 
 	return (
 		<div className="card mt-2 bg-light">
