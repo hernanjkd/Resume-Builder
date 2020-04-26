@@ -21,6 +21,7 @@
 		"@babel/plugin-proposal-class-properties": "^7.4.0",
 		"@babel/preset-env": "^7.4.3",
 		"@babel/preset-react": "^7.0.0",
+		"acorn": "^7.1.1",
 		"babel-eslint": "^10.0.1",
 		"babel-loader": "^8.0.5",
 		"babel-plugin-transform-class-properties": "^6.24.1",
@@ -70,6 +71,6 @@
 		"react-router-dom": "^4.3.1"
 	},
 	"resolutions": {
-	  "minimist": "^1.2.5"
+		"minimist": "^1.2.5"
 	}
 }
